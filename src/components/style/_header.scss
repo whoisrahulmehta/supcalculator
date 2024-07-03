@@ -1,0 +1,60 @@
+@mixin flexrow {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@mixin flexcol {
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+  justify-content: center;
+  align-items: space-evenly;
+}
+@mixin hover {
+  color: gold !important;
+}
+
+@mixin blurry {
+  background: rgba(255, 255, 255, 0.051);
+  border-radius: 20px;
+  // width: 100%;
+}
+.orange {
+  color: orange !important;
+  &:hover {
+    @include hover;
+    color: white !important;
+  }
+}
+.gold {
+  color: gold;
+}
+header {
+  // @include blurry;
+  @include flexrow;
+  justify-content: space-between;
+  height: 5%;
+  width: 100%;
+  padding: 0 4%;
+  order: -5;
+}
+.brand {
+  @include flexrow;
+  gap: 10px;
+  font-size: 2vmax;
+  &:hover {
+    @include hover;
+  }
+}
+.btns {
+  @include flexrow;
+  width: 20%;
+  justify-content: space-evenly;
+  font-size: 20px;
+  font-size: 1.5vmax;
+  span {
+    &:hover {
+      @include hover;
+    }
+  }
+}

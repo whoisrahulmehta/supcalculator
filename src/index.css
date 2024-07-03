@@ -1,13 +1,397 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  color: inherit;
+  text-decoration: none;
 }
+a:hover {
+  text-decoration: underline;
+  color: gold;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-light {
+  color: wheat !important;
+}
+
+.text-dark {
+  color: black !important;
+}
+
+.active {
+  color: gold;
+}
+
+.App-loading {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(36deg, orange, red, black);
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 10vh;
+  color: white;
+  font-size: 1.6rem;
+  position: relative;
+}
+.logo::after {
+  content: "";
+  width: 10%;
+  color: white;
+  border-bottom: 3px solid gold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: grow 2.5s linear 0s infinite forwards;
+  text-align: right;
+}
+.logo b {
+  color: gold;
+  font-size: 4.5rem;
+  animation: rotate 4s linear 0s infinite forwards;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes grow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.orange {
+  color: orange !important;
+}
+.orange:hover {
+  color: gold !important;
+  color: white !important;
+}
+
+.gold {
+  color: gold;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-between;
+  height: 5%;
+  width: 100%;
+  padding: 0 4%;
+  order: -5;
+}
+
+.brand {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  font-size: 2vmax;
+}
+.brand:hover {
+  color: gold !important;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 20%;
+  justify-content: space-evenly;
+  font-size: 20px;
+  font-size: 1.5vmax;
+}
+.btns span:hover {
+  color: gold !important;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0;
+  overflow-x: auto;
+  overflow-y: none;
+  gap: 1%;
+  scrollbar-width: none;
+  height: 3%;
+}
+
+.cal {
+  background: rgba(255, 255, 255, 0.051);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 80%;
+  min-width: 35%;
+}
+
+main,
+footer {
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  height: 86%;
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+  justify-content: center;
+  align-items: space-evenly;
+  justify-content: space-evenly;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  order: 5;
+  border-radius: 0;
+  overflow-x: auto;
+  overflow-y: none;
+  gap: 1%;
+  scrollbar-width: none;
+  height: 7%;
+}
+
+.inputF,
+.outputF,
+.dynamicC {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.dynamicC {
+  flex-direction: column;
+  width: 100%;
+}
+
+.inputF,
+.outputF {
+  height: 7%;
+}
+
+.dynamicH {
+  height: 8%;
+  width: 100%;
+  text-align: center;
+  order: -3;
+}
+
+.dynamicC {
+  height: 78%;
+  border-radius: 0;
+}
+
+.inputF {
+  width: 100%;
+  position: relative;
+  order: -2;
+  justify-content: center;
+}
+.inputF p {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 20%;
+  min-width: 20%;
+  text-align: center;
+}
+.inputF .clrbtn {
+  position: absolute;
+  right: 20%;
+}
+
+input,
+textarea {
+  width: 30%;
+  padding: 5px 5px;
+  resize: none;
+  height: 100%;
+  background: transparent;
+  background: rgba(255, 255, 255, 0.051);
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  text-align: left;
+  overflow: auto;
+  scrollbar-width: none;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  text-align: left;
+  color: inherit;
+  opacity: 0.3;
+}
+input::placeholder,
+textarea::placeholder {
+  text-align: left;
+  color: inherit;
+  opacity: 0.3;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80%;
+  width: 20%;
+  margin: auto;
+}
+
+.outputF {
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+  justify-content: center;
+  align-items: space-evenly;
+  text-align: center;
+  gap: 10px;
+  width: 100%;
+  order: 1;
+}
+.outputF .btn {
+  width: 30%;
+}
+.outputF p {
+  width: 100%;
+}
+
+button {
+  width: 20%;
+  padding: 2px 0;
+  margin: auto;
+  background-color: black;
+  border: 1px solid;
+  color: wheat;
+}
+button:hover {
+  color: gold;
+  background-color: white;
+}
+
+.rotuing {
+  width: 100%;
+  height: 77%;
+  display: flex;
+  justify-content: center;
+  gap: 1%;
+}
+
+.display, .buttons {
+  width: 48%;
+  height: 100%;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.buttons .rows {
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .rotuing {
+    flex-direction: column;
+  }
+  .rotuing .buttons {
+    display: none;
+  }
+  .rotuing .display {
+    height: 100%;
+    width: 100%;
+  }
+}
+.rows {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 13%;
+  width: 20%;
+  margin: auto;
+}
+
+.items {
+  background: rgba(255, 255, 255, 0.051);
+  border-radius: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: orange !important;
+  font-size: 1rem;
+}
+.items:hover {
+  cursor: grab;
+}
+.items:active {
+  cursor: grabbing;
+}
+
+.orange {
+  background-color: rgb(255, 165, 0);
+  color: white !important;
+}
+.orange:hover {
+  background: rgba(255, 165, 0, 0.4);
+}
+
+main, footer {
+  width: 100%;
+}/*# sourceMappingURL=index.css.map */

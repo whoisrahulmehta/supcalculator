@@ -1,0 +1,18 @@
+footer{
+    @include flexrow;
+     border-radius: 0;
+    overflow-x: auto;
+    overflow-y: none;
+    gap: 1%;
+    scrollbar-width: none;
+    height: 3%;
+  }
+  .cal{
+    @include blurry;
+     @include flexrow;
+     justify-content: center;
+     gap: 4px;
+   height: 80%;
+     min-width: 35%;
+    //  opacity: 0.2;
+   }
