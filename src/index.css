@@ -394,4 +394,10 @@ button:hover {
 
 main, footer {
   width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .rows {
+    width: 100%;
+  }
 }/*# sourceMappingURL=index.css.map */
